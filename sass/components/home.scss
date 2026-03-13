@@ -985,3 +985,93 @@
         margin-bottom: 1rem;
     }
 }
+
+
+.signin-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+
+    @include m.flex-column(center, center);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    z-index: 1000;
+
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .signin-wrapper {
+        text-align: center;
+
+        .signin-logo {
+            @include m.title(h.$grey-light, 20px, h.$font-medium);
+        }
+
+        .signin-card {
+            width: 380px;
+            background: h.$color-primary-dark;
+            padding: 30px;
+            border-radius: 16px;
+            color: h.$grey-light;
+
+            .form-group {
+                // display: flex;
+                // flex-direction: column;
+                @include m.flex-column(center, flex);
+                margin-bottom: 15px;
+                text-align: left;
+
+                label {
+                    @include m.subtitle(h.$grey-light, 5px, h.$font-regular);
+                }
+
+                input {
+                    background: #1f2a44;
+                    padding: 10px;
+                    border-radius: 8px;
+                    border: none;
+                    outline: none;
+                }
+
+                input:focus {
+                    border: 1px solid h.$color-primary-light;
+                }
+            }
+
+            .signin-options {
+                display: flex;
+                justify-content: space-between;
+                font-size: 13px;
+                margin-bottom: 20px;
+
+                a {
+                    color: h.$color-primary;
+                }
+            }
+
+            .signin-btn {
+                width: 100%;
+                padding: 12px;
+                border: none;
+                border-radius: 8px;
+                background: h.$color-primary;
+                color: h.$grey-light;
+                font-weight: 600;
+                cursor: pointer;
+            }
+
+            .create-account {
+                margin-top: 15px;
+                font-size: 13px;
+
+                a {
+                    color: h.$color-primary;
+                }
+            }
+        }
+    }
+}
