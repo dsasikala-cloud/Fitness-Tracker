@@ -298,7 +298,6 @@
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Features</a></li>
-                        <!-- <li><a href="#" id="openFeedback">Feedback</a></li> -->
                         <li><a href="#">Programs</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
@@ -335,9 +334,69 @@
     </footer>
 
 
+    <!-- Feedback -->
+    <div class="feedback-modal" id="feedbackModal">
+
+        <div class="feedback-modal__content">
+
+            <span class="feedback-modal__close" id="closeFeedback">&times;</span>
+
+            <div class="feedback">
+
+                <h2 class="feedback__title">Fitness Feedback Form</h2>
+
+                <div class="feedback__success" id="successMessage">
+                    ✅ Feedback submitted successfully!
+                </div>
+
+                <form class="feedback__form" id="feedbackForm">
+
+                    <div class="feedback__group">
+                        <label>Name *</label>
+                        <input type="text" id="name" placeholder="Enter your name" />
+                        <small class="feedback__error" id="nameError"></small>
+                    </div>
+
+                    <div class="feedback__group">
+                        <label>Email *</label>
+                        <input type="text" id="email" placeholder="Enter your email" />
+                        <small class="feedback__error" id="emailError"></small>
+                    </div>
+
+                    <div class="feedback__group">
+                        <label>Date</label>
+                        <input type="date" id="date" />
+                    </div>
+
+                    <div class="feedback__group">
+                        <label>Rate us (1-10) *</label>
+                        <input type="number" id="rating" min="1" max="10" />
+                        <small class="feedback__error" id="ratingError"></small>
+                    </div>
+
+                    <div class="feedback__group">
+                        <label>Description</label>
+                        <textarea id="description" rows="4"></textarea>
+                    </div>
+
+                    <div class="feedback__group">
+                        <label>What can be improved?</label>
+                        <textarea id="improvement" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="feedback__btn">Submit</button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
     <a href="index.html" class="floating-home">
         <i class="fa-solid fa-house"></i>
     </a>
+
 
     <script src="./js/components/home.js"></script>
 </body>

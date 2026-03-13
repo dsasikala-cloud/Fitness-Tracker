@@ -40,19 +40,19 @@ closeBtn.addEventListener("click", () => {
 
 
 // SignIn
-const openBtn = document.getElementById("openSignin");
-const modal = document.getElementById("signinModal");
+// const openBtn = document.getElementById("openSignin");
+// const modal = document.getElementById("signinModal");
 
-openBtn.addEventListener("click", function(e){
-    e.preventDefault();   // prevents page refresh
-    modal.classList.add("active");
-});
+// openBtn.addEventListener("click", function(e){
+//     e.preventDefault();   // prevents page refresh
+//     modal.classList.add("active");
+// });
 
-modal.addEventListener("click", function(e){
-    if(e.target === modal){
-        modal.classList.remove("active");
-    }
-});
+// modal.addEventListener("click", function(e){
+//     if(e.target === modal){
+//         modal.classList.remove("active");
+//     }
+// });
 
 
 // Feedback
