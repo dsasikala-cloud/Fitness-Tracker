@@ -1,0 +1,109 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as *;
+
+
+.contact-page {
+    background: linear-gradient(135deg, #020617, #0f172a);
+    min-height: 100vh;
+}
+
+.contact {
+    width: 90%;
+    margin: 0 auto 60px auto;
+    padding-top: 5rem;
+
+    &__title {
+        text-align: center;
+        @include m.title($grey-light, 10px, $font-large);
+    }
+
+    &__desc {
+        text-align: center;
+        @include m.subtitle($grey-medium, 4%, $font-regular);
+    }
+
+    &__wrapper {
+        gap: 40px;
+        @include m.flex-row(center, flex-start);
+        flex-wrap: wrap;
+    }
+
+    &__info {
+        flex: 1;
+        background: $color-primary-dark;
+        color: $grey-light;
+        padding: 30px;
+        border-radius: 14px;
+        @include m.flex-column(center, flex-start);
+        gap: 25px;
+    }
+
+    &__item h4 {
+        margin-bottom: 5px;
+        color: $color-primary;
+    }
+
+    &__form {
+        flex: 1.2;
+        background: $color-primary-dark;
+        padding: 30px;
+        border-radius: 14px;
+    }
+
+    &__group {
+        @include m.flex-column(center, flex);
+        margin-bottom: 18px;
+    }
+
+    label {
+        @include m.subtitle($grey-light, 6px, $font-regular);
+    }
+
+    input,
+    textarea {
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        background: #1f2a44;
+        color: $grey-light;
+        outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+        border: 1px solid $color-primary-light;
+    }
+
+    &__btn {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: $color-primary;
+        color: $grey-light;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+}
+
+@media (max-width: $bp-tablet) {
+
+    .contact__wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contact__info,
+    .contact__form {
+        width: 100%;
+    }
+
+    .contact__title {
+        @include m.title($grey-light, 10px, $font-medium);
+    }
+
+    .contact__desc {
+        @include m.subtitle($grey-medium, 4%, $font-small);
+    }
+}
