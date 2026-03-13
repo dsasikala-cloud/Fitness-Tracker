@@ -1,0 +1,113 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as *;
+
+
+.pricing {
+    padding: 6% 5%;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    &-card {
+        background: $color-primary-dark;
+        border-radius: 16px;
+        padding: 25px;
+        color: $grey-light;
+
+        &__top {
+            @include m.flex-row(space-between, flex-start);
+        }
+
+        &__duration {
+            @include m.flex-column(space-between, flex-start);
+        }
+
+        &__number {
+            @include m.title($grey-light, 0, 3rem);
+        }
+
+        &__months {
+            @include m.title($grey-light, 0, $font-regular);
+            opacity: 0.8;
+        }
+
+        &__price {
+            text-align: right;
+        }
+
+        hr {
+            margin: 20px 0;
+            border: none;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        &__features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin: 10px 0;
+            }
+        }
+
+        &__btn {
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background: white;
+            color: #e63946;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        .new-price {
+            @include m.title($grey-light, 0, 1.8rem);
+        }
+
+        .per-month {
+            @include m.subtitle($grey-light, 0, $font-regular);
+            opacity: 0.8;
+        }
+    }
+}
+
+@media (max-width: $bp-medium) {
+
+    .pricing {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: $bp-tablet) {
+
+    .pricing {
+        &__grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        &__features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            // font-size: $font-regular;
+
+            li {
+                margin: 10px 0;
+                font-size: 10px;
+            }
+        }
+    }
+}
