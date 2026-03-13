@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+
+    <div class="exercise_">
+        <section class="exercise-section">
+            <div class="header">
+                <h2 class="carousel-title">Browse Exercises</h2>
+
+                <div class="arrows">
+                    <button id="prevBtn">&#10094;</button>
+                    <button id="nextBtn">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="carousel" id="carousel">
+                <div class="carousel__card active" data-category="">
+                    <img src="assets/gym.png">
+                    <p class="subtitle">All</p>
+                </div>
+
+                <div class="carousel__card" data-category="arm">
+                    <img src="assets/gym.png">
+                    <p class="subtitle">Arm</p>
+                </div>
+
+                <div class="carousel__card" data-category="back">
+
+                    <img src="assets/gym.png">
+                    <p class="subtitle">Back</p>
+                </div>
+
+                <div class="carousel__card" data-category="cardio">
+                    <img src="assets/gym.png">
+                    <p class="subtitle">Cardio</p>
+                </div>
+
+                <div class="carousel__card" data-category="chest">
+                    <img src="assets/gym.png">
+                    <p class="subtitle">Chest</p>
+                </div>
+                <div class="carousel__card" data-category="leg">
+                    <img src="assets/gym.png">
+                    <p class="subtitle">Leg</p>
+                </div>
+
+                <div class="carousel__card" data-category="neck">
+                    <img src="assets/gym.png">
+                    <p class="subtitle">Neck</p>
+                </div>
+
+                <div class="carousel__card" data-category="shoulder">
+                    <img src="assets/gym.png">
+                    <p class="subtitle">Shoulder</p>
+                </div>
+
+                <div class="carousel__card" data-category="waist">
+                    <img src="assets/gym.png">
+                    <p class="subtitle">Waist</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="exercises-section">
+
+            <h2 class="exercises-section__title">Exercises</h2>
+
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="Search...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="exercises">
+
+                <div class="exercises__card" data-category="arm"><img src="assets/arm1.gif">
+                    <p>Arm Workout</p>
+                    <h5>Dumbell Bicep Curl</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm2.gif">
+                    <p>Arm Workout</p>
+                    <h5>Cable Pushdown</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm3.gif">
+                    <p>Arm Workout</p>
+                    <h5>Dumbell Concentration Curl</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm4.gif">
+                    <p>Arm Workout</p>
+                    <h5>Dumbell Seated Neutral Wrist Curl</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm5.gif">
+                    <p>Arm Workout</p>
+                    <h5>Seated Barbell Reverse Wrist Curl</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm6.gif">
+                    <p>Arm Workout</p>
+                    <h5>Dumbell Preacher Curl</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm7.gif">
+                    <p>Arm Workout</p>
+                    <h5>Wrist Stretches</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm8.gif">
+                    <p>Arm Workout</p>
+                    <h5>Bayesian Cable Curl</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm9.gif">
+                    <p>Arm Workout</p>
+                    <h5>Cable Preacher Curl</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm10.gif">
+                    <p>Arm Workout</p>
+                    <h5>Dumbell Bent Over Row</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm11.gif">
+                    <p>Arm Workout</p>
+                    <h5>Seated Dumbell Overhead Tricep Extension</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm12.gif">
+                    <p>Arm Workout</p>
+                    <h5>Dumbell Incline Hammer Press</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm13.gif">
+                    <p>Arm Workout</p>
+                    <h5>Close-Grip Dumbell Press</h5>
+                </div>
+                <div class="exercises__card" data-category="arm"><img src="assets/arm15.gif">
+                    <p>Arm Workout</p>
+                    <h5>Incline Dumbell Fly</h5>
+                </div>
+
+                <div class="exercises__card" data-category="back"><img src="assets/back1.gif">
+                    <p>Back Workout</p>
+                    <h5>V-Bar Lat Pulldown</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back2.gif">
+                    <p>Back Workout</p>
+                    <h5>Lever Seated Row</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back3.gif">
+                    <p>Back Workout</p>
+                    <h5>T-Bar Row</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back4.gif">
+                    <p>Back Workout</p>
+                    <h5>Barbell Romanian Deadlift</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back5.gif">
+                    <p>Back Workout</p>
+                    <h5>Cable Bent-Over Row</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back6.gif">
+                    <p>Back Workout</p>
+                    <h5>Cable Low Fly</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back7.gif">
+                    <p>Back Workout</p>
+                    <h5>Cable Tricep Extension</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back8.gif">
+                    <p>Back Workout</p>
+                    <h5>Half-Kneeling Lat Pulldown</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back9.gif">
+                    <p>Back Workout</p>
+                    <h5>Lying Cable Fly</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back10.gif">
+                    <p>Back Workout</p>
+                    <h5>T-Bar Row</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back11.gif">
+                    <p>Back Workout</p>
+                    <h5>T-Bar Row</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back12.gif">
+                    <p>Back Workout</p>
+                    <h5>Dumbell Straight Leg Deadlift</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back13.gif">
+                    <p>Back Workout</p>
+                    <h5>Dumbell Single-Arm Bent-Over Row</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back15.gif">
+                    <p>Back Workout</p>
+                    <h5>Bent Over Row</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back16.gif">
+                    <p>Back Workout</p>
+                    <h5>Bumbell Upright Row</h5>
+                </div>
+                <div class="exercises__card" data-category="back"><img src="assets/back17.gif">
+                    <p>Back Workout</p>
+                    <h5>Single-Arm Dumbell Row</h5>
+                </div>
+
+                <div class="exercises__card" data-category="cardio"><img src="assets/cardio1.gif">
+                    <p>Cardio Workout</p>
+                    <h5>Jumping Jacks</h5>
+                </div>
+                <div class="exercises__card" data-category="cardio"><img src="assets/cardio2.gif">
+                    <p>Cardio Workout</p>
+                    <h5>Circular Toe Touch</h5>
+                </div>
+                <div class="exercises__card" data-category="cardio"><img src="assets/cardio3.gif">
+                    <p>Cardio Workout</p>
+                    <h5>Assault Fitness Air Bike Classic</h5>
+                </div>
+                <div class="exercises__card" data-category="cardio"><img src="assets/cardio4.gif">
+                    <p>Cardio Workout</p>
+                    <h5>Battle Ropes</h5>
+                </div>
+                <div class="exercises__card" data-category="cardio"><img src="assets/cardio5.gif">
+                    <p>Cardio Workout</p>
+                    <h5>Barbell Zercher Squat</h5>
+                </div>
+                <div class="exercises__card" data-category="cardio"><img src="assets/cardio6.gif">
+                    <p>Cardio Workout</p>
+                    <h5>Assault Airbike Classic</h5>
+                </div>
+                <div class="exercises__card" data-category="cardio"><img src="assets/cardio7.gif">
+                    <p>Cardio Workout</p>
+                    <h5>Elbow to Knee Twists</h5>
+                </div>
+                <div class="exercises__card" data-category="cardio"><img src="assets/cardio8.gif">
+                    <p>Cardio Workout</p>
+                    <h5>Elliptical Machine Burnfit</h5>
+                </div>
+                <div class="exercises__card" data-category="cardio"><img src="assets/cardio9.gif">
+                    <p>Cardio Workout</p>
+                    <h5>Lever Cable Rear Pulldown</h5>
+                </div>
+                <div class="exercises__card" data-category="cardio"><img src="assets/cardio10.gif">
+                    <p>Cardio Workout</p>
+                    <h5>Handboard Hang</h5>
+                </div>
+
+                <div class="exercises__card" data-category="chest"><img src="assets/chest1.gif">
+                    <p>Chest Workout</p>
+                    <h5>Incline Push-Up</h5>
+                </div>
+                <div class="exercises__card" data-category="chest"><img src="assets/chest2.gif">
+                    <p>Chest Workout</p>
+                    <h5>Deep Push-Ups on Parallel Bars</h5>
+                </div>
+                <div class="exercises__card" data-category="chest"><img src="assets/chest3.gif">
+                    <p>Chest Workout</p>
+                    <h5>Incline Dumbell Pullover</h5>
+                </div>
+                <div class="exercises__card" data-category="chest"><img src="assets/chest4.gif">
+                    <p>Chest Workout</p>
+                    <h5>High-to-Low Cable Fly</h5>
+                </div>
+                <div class="exercises__card" data-category="chest"><img src="assets/chest5.gif">
+                    <p>Chest Workout</p>
+                    <h5>Cable Decline Fly</h5>
+                </div>
+                <div class="exercises__card" data-category="chest"><img src="assets/chest6.gif">
+                    <p>Chest Workout</p>
+                    <h5>Push-Ups</h5>
+                </div>
+                <div class="exercises__card" data-category="chest"><img src="assets/chest7.gif">
+                    <p>Chest Workout</p>
+                    <h5>Lower Decline Chest Press</h5>
+                </div>
+                <div class="exercises__card" data-category="chest"><img src="assets/chest8.gif">
+                    <p>Chest Workout</p>
+                    <h5>Machine Assisted Dips</h5>
+                </div>
+                <div class="exercises__card" data-category="chest"><img src="assets/chest9.gif">
+                    <p>Chest Workout</p>
+                    <h5>Machine Pullover</h5>
+                </div>
+                <div class="exercises__card" data-category="chest"><img src="assets/chest10.gif">
+                    <p>Chest Workout</p>
+                    <h5>Dumbell Bench Press</h5>
+                </div>
+                <div class="exercises__card" data-category="chest"><img src="assets/chest11.gif">
+                    <p>Chest Workout</p>
+                    <h5>Barbell Pullover</h5>
+                </div>
+                <div class="exercises__card" data-category="chest"><img src="assets/chest12.gif">
+                    <p>Chest Workout</p>
+                    <h5>Cable Standing Chest Press</h5>
+                </div>
+
+                <div class="exercises__card" data-category="leg"><img src="assets/leg1.gif">
+                    <p>Leg Workout</p>
+                    <h5>Cable Hip extension</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg2.gif">
+                    <p>Leg Workout</p>
+                    <h5>Single Leg Step Down</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg3.gif">
+                    <p>Leg Workout</p>
+                    <h5>Lunge Stretch</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg4.gif">
+                    <p>Leg Workout</p>
+                    <h5>Dumbell Goblet Squat</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg5.gif">
+                    <p>Leg Workout</p>
+                    <h5>Barbell Squat</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg6.gif">
+                    <p>Leg Workout</p>
+                    <h5>Dumbell Goblet Squat</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg7.gif">
+                    <p>Leg Workout</p>
+                    <h5>Dumbell Jump Squat</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg8.gif">
+                    <p>Leg Workout</p>
+                    <h5>Standing Toe Touch</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg9.gif">
+                    <p>Leg Workout</p>
+                    <h5>Barbell Lunge</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg10.gif">
+                    <p>Leg Workout</p>
+                    <h5>Hamstring</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg11.gif">
+                    <p>Leg Workout</p>
+                    <h5>Kneeling Landmine Press</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg12.gif">
+                    <p>Leg Workout</p>
+                    <h5>Smith Machine Leg Press</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg13.gif">
+                    <p>Leg Workout</p>
+                    <h5>Leg Extension</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg14.gif">
+                    <p>Leg Workout</p>
+                    <h5>Standing Calf Raise</h5>
+                </div>
+                <div class="exercises__card" data-category="leg"><img src="assets/leg15.gif">
+                    <p>Leg Workout</p>
+                    <h5>Lying Leg Curl</h5>
+                </div>
+
+                <div class="exercises__card" data-category="neck"><img src="assets/neck1.gif">
+                    <p>Neck Workout</p>
+                    <h5>Scapula Dips</h5>
+                </div>
+                <div class="exercises__card" data-category="neck"><img src="assets/neck2.gif">
+                    <p>Neck Workout</p>
+                    <h5>Dip Shrugs</h5>
+                </div>
+                <div class="exercises__card" data-category="neck"><img src="assets/neck3.gif">
+                    <p>Neck Workout</p>
+                    <h5>Rope Cable Curl</h5>
+                </div>
+                <div class="exercises__card" data-category="neck"><img src="assets/neck4.gif">
+                    <p>Neck Workout</p>
+                    <h5>Lever Shrug</h5>
+                </div>
+                <div class="exercises__card" data-category="neck"><img src="assets/neck5.gif">
+                    <p>Neck Workout</p>
+                    <h5>Barbell Upright Row</h5>
+                </div>
+
+                <div class="exercises__card" data-category="shoulder"><img src="assets/shoulder1.gif">
+                    <p>Shoulder Workout</p>
+                    <h5>Plate Front Raise</h5>
+                </div>
+                <div class="exercises__card" data-category="shoulder"><img src="assets/shoulder2.gif">
+                    <p>Shoulder Workout</p>
+                    <h5>Weighted Round Arm</h5>
+                </div>
+                <div class="exercises__card" data-category="shoulder"><img src="assets/shoulder3.gif">
+                    <p>Shoulder Workout</p>
+                    <h5>Dumbell Lateral Raise</h5>
+                </div>
+                <div class="exercises__card" data-category="shoulder"><img src="assets/shoulder4.gif">
+                    <p>Shoulder Workout</p>
+                    <h5>Seated Lateral Raise</h5>
+                </div>
+                <div class="exercises__card" data-category="shoulder"><img src="assets/shoulder5.gif">
+                    <p>Shoulder Workout</p>
+                    <h5>Incline Dumbell Reverse Fly</h5>
+                </div>
+                <div class="exercises__card" data-category="shoulder"><img src="assets/shoulder6.gif">
+                    <p>Shoulder Workout</p>
+                    <h5>Incline Dumbell Y-Raise</h5>
+                </div>
+                <div class="exercises__card" data-category="shoulder"><img src="assets/shoulder7.gif">
+                    <p>Shoulder Workout</p>
+                    <h5>Dumbell Rear Lateral Raise</h5>
+                </div>
+                <div class="exercises__card" data-category="shoulder"><img src="assets/shoulder8.gif">
+                    <p>Shoulder Workout</p>
+                    <h5>Cable Rear Delt Flyes</h5>
+                </div>
+                <div class="exercises__card" data-category="shoulder"><img src="assets/shoulder9.gif">
+                    <p>Shoulder Workout</p>
+                    <h5>Cable Front Raise</h5>
+                </div>
+                <div class="exercises__card" data-category="shoulder"><img src="assets/shoulder10.gif">
+                    <p>Shoulder Workout</p>
+                    <h5>Machine Shoulder Press</h5>
+                </div>
+
+                <div class="exercises__card" data-category="waist"><img src="assets/waist1.gif">
+                    <p>Waist Workout</p>
+                    <h5>Hip Raise</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist2.gif">
+                    <p>Waist Workout</p>
+                    <h5>Standing Cable Crunch</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist3.gif">
+                    <p>Waist Workout</p>
+                    <h5>V-Cut Abs</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist4.gif">
+                    <p>Waist Workout</p>
+                    <h5>Side Crunch</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist5.gif">
+                    <p>Waist Workout</p>
+                    <h5>Seated Leg Raise</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist6.gif">
+                    <p>Waist Workout</p>
+                    <h5>Cross Crunch</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist7.gif">
+                    <p>Waist Workout</p>
+                    <h5>Bench Side Bend</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist8.gif">
+                    <p>Waist Workout</p>
+                    <h5>Weighted Russian Twist</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist9.gif">
+                    <p>Waist Workout</p>
+                    <h5>Cable Standing Lifts</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist10.gif">
+                    <p>Waist Workout</p>
+                    <h5>Abdominal Hip Flexor</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist11.gif">
+                    <p>Waist Workout</p>
+                    <h5>Seated Twist With Resistance Band</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist12.gif">
+                    <p>Waist Workout</p>
+                    <h5>Ab Coaster</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist13.gif">
+                    <p>Waist Workout</p>
+                    <h5>Standing Side Bend</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist14.gif">
+                    <p>Waist Workout</p>
+                    <h5>Weighted Side Bend</h5>
+                </div>
+                <div class="exercises__card" data-category="waist"><img src="assets/waist15.gif">
+                    <p>Waist Workout</p>
+                    <h5>Banded Lying Leg</h5>
+                </div>
+
+            </div>
+
+            <div class="pagination"></div>
+
+            <a href="index.html" class="floating-home">
+                <i class="fa-solid fa-house"></i>
+            </a>
+
+        </section>
+
+    </div>
+
+    <script src="./js/components/exercises.js"></script>
+</body>
+
+</html>

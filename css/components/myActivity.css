@@ -1,0 +1,438 @@
+.dashboard {
+  padding: 2rem;
+  min-height: 100vh;
+}
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 1.5rem;
+  grid-template-areas: "activity activity goals heartbeat" "activity activity goals sleep" "food water health steps" "food water meditation steps";
+}
+
+.chart-card {
+  background: #182136;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.chart-card h3 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.chart-card__body {
+  flex: 1;
+  position: relative;
+}
+.chart-card__body canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.chart-card--primary {
+  grid-area: activity;
+}
+
+.chart-card--secondary {
+  grid-area: goals;
+}
+
+.chart-card--heartbeat {
+  grid-area: heartbeat;
+}
+
+.chart-card--sleep {
+  grid-area: sleep;
+}
+
+.chart-card--food {
+  grid-area: food;
+}
+
+.chart-card--water {
+  grid-area: water;
+}
+
+.chart-card--health {
+  grid-area: health;
+}
+
+.chart-card--meditation {
+  grid-area: meditation;
+}
+
+.chart-card--steps {
+  grid-area: steps;
+}
+
+.chart-card--secondary {
+  max-width: 100%;
+}
+.chart-card--secondary .chart-card__body {
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  max-width: 200px;
+  margin: auto;
+}
+.chart-card--secondary .donut-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.4em;
+}
+
+.heartbeat {
+  height: 100%;
+  width: 100%;
+}
+.heartbeat__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.heartbeat__bpm {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.heartbeat__bpm small {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-left: 4px;
+}
+.heartbeat__status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(0, 255, 136, 0.15);
+}
+.heartbeat__graph {
+  height: 60%;
+  margin-top: 10px;
+}
+
+.sleep {
+  width: 100%;
+}
+.sleep__progress {
+  height: 10px;
+  background: #6db2f7;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  animation: fillBar 1.5s ease forwards;
+}
+.sleep__bar {
+  background: #2e3a52;
+  border-radius: 20px;
+}
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 75%;
+  }
+}
+.sleep__desc {
+  font-size: 1em;
+  opacity: 0.8;
+  color: #7C8DA3;
+}
+
+@media (max-width: 1200px) {
+  .dashboard__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "activity activity goals" "heartbeat food water" "sleep food water" "health steps steps" "meditation steps steps";
+  }
+}
+@media (max-width: 992px) {
+  .dashboard__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "activity activity" "goals heartbeat" "goals sleep" "food water" "food water" "health meditation" "steps steps" "steps steps";
+  }
+}
+@media (max-width: 768px) {
+  .dashboard__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "activity activity" "goals heartbeat" "goals sleep" "food water" "food water" "health meditation" "steps steps";
+  }
+}
+@media (max-width: 576px) {
+  .dashboard__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "activity" "goals" "heartbeat" "sleep" "food" "water" "health" "meditation" "steps";
+  }
+  .chart-card--goals {
+    grid-row: auto;
+  }
+}
+.chart-card--food {
+  width: 100%;
+}
+.chart-card--food .food {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 2rem;
+  width: 100%;
+}
+.chart-card--food .food__top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+.chart-card--food .food__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.chart-card--food p {
+  color: #7C8DA3;
+  font-size: 0.85rem;
+}
+.chart-card--food .food__ring {
+  display: flex;
+  justify-content: flex-end;
+}
+.chart-card--food .food__circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: conic-gradient(#0e4ebb 60%, #2e3a52 0%);
+}
+.chart-card--food .food__circle::before {
+  content: "";
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  background: #182136;
+  border-radius: 50%;
+}
+.chart-card--food .food__circle span {
+  position: relative;
+  font-weight: 600;
+  text-align: center;
+}
+.chart-card--food .food__bottom {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+.chart-card--food .macro {
+  flex: 1;
+}
+.chart-card--food .macro p {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+.chart-card--food .macro__bar {
+  height: 6px;
+  background: #7C8DA3;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.chart-card--food .macro__fill {
+  height: 100%;
+  background: #0e4ebb;
+  border-radius: 10px;
+  animation: fillBar 1.5s ease forwards;
+}
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 75%;
+  }
+}
+
+.water {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1.5rem;
+}
+.water__body {
+  display: grid;
+  grid-template-columns: 2fr 0.5fr 0.5fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+.water__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.water__last, .water__tip {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  font-size: 1em;
+  color: #7C8DA3;
+}
+.water__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+.water__btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: #F8FAFC;
+  transition: 0.3s;
+}
+.water__btn:hover {
+  background: #6db2f7;
+}
+.water__progress {
+  display: flex;
+  justify-content: center;
+}
+.water__capsule {
+  width: 40px;
+  height: 180px;
+  border-radius: 40px;
+  background: #F8FAFC;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.water__capsule span {
+  position: absolute;
+  color: #182136;
+  font-weight: 600;
+  z-index: 2;
+  bottom: 10px;
+}
+.water__capsule::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to top, #6db2f7, #0e4ebb);
+  transition: height 0.5s ease;
+}
+
+.chart-card--health {
+  grid-area: health;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.health {
+  width: 100%;
+  height: 100%;
+}
+.health__score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.health__percent {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.health__status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  background: rgba(0, 255, 136, 0.15);
+}
+.health__segments {
+  display: flex;
+  gap: 4px;
+  margin-top: 1rem;
+}
+.health__segment {
+  flex: 1;
+  height: 10px;
+  border-radius: 4px;
+  background: #2e3a52;
+}
+.health__segment--active {
+  background: #0e4ebb;
+}
+
+.meditation {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  width: 100%;
+}
+.meditation__time {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.meditation__progress {
+  width: 100%;
+  height: 10px;
+  background: #2e3a52;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.meditation__progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #6db2f7;
+  border-radius: 20px;
+  transition: width 0.5s ease;
+}
+.meditation__description {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  line-height: 1.4;
+}
+
+.chart-card--steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.chart-card--steps .chart-card__body {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  position: relative;
+}
+
+.dashboard {
+  background: #7C8DA3;
+}
+
+/*# sourceMappingURL=myActivity.css.map */

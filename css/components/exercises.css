@@ -1,0 +1,220 @@
+.search-wrapper {
+  position: relative;
+  width: 30%;
+  transition: all 0.4s ease;
+  margin-left: auto;
+}
+.search-wrapper input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 1px solid #7C8DA3;
+  outline: none;
+}
+.search-wrapper i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #7C8DA3;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .search-wrapper {
+    width: 100%;
+  }
+  .search-wrapper:hover {
+    width: 100%;
+  }
+}
+
+.exercise-section {
+  width: 100%;
+  padding: 3rem 4rem;
+}
+.exercise-section .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.exercise-section .header h2 {
+  font-size: 1.4em;
+  margin-bottom: 0;
+  font-weight: 700;
+  color: #F8FAFC;
+}
+.exercise-section .header .arrows {
+  display: flex;
+  gap: 10px;
+}
+.exercise-section .header .arrows button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #F8FAFC;
+  color: #182136;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.exercise-section .header .arrows button:hover {
+  background: #0e4ebb;
+}
+.exercise-section .carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 20px 0px;
+  height: 20vh;
+}
+.exercise-section .carousel::-webkit-scrollbar {
+  display: none;
+}
+.exercise-section .carousel__card {
+  min-width: 220px;
+  height: 100%;
+  scroll-snap-align: start;
+  background: #F8FAFC;
+  border-radius: 18px;
+  border: 2px solid #182136;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+.exercise-section .carousel__card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.exercise-section .carousel__card p {
+  font-size: 1em;
+  margin-bottom: 0px;
+  line-height: 1.6;
+  color: #182136;
+}
+.exercise-section .carousel__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+.exercise-section .carousel__card.active {
+  background: #dfe1e3;
+}
+
+@media (max-width: 1200px) {
+  .exercise-section .carousel {
+    height: 30vh;
+  }
+}
+@media (max-width: 992px) {
+  .exercise-section .carousel {
+    height: 25vh;
+  }
+}
+.exercises-section {
+  padding: 3rem 2rem;
+}
+.exercises-section__title {
+  font-size: 2.4em;
+  margin-bottom: 60px;
+  font-weight: 700;
+  color: #F8FAFC;
+  text-align: center;
+  text-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.exercises {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.8rem;
+}
+.exercises__card {
+  position: relative;
+  background: #182136;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.exercises__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+.exercises__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.exercises__card p {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.exercises__card h5 {
+  padding: 0 1rem 1rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 15px;
+  color: #000000;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0;
+}
+.heart:hover .heart {
+  opacity: 1;
+  z-index: 100;
+}
+
+.heart.active {
+  color: red;
+  opacity: 1;
+}
+
+.pagination {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #F8FAFC;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+.pagination button:hover {
+  background: #0e4ebb;
+  color: #F8FAFC;
+}
+.pagination button.active {
+  background: #182136;
+  color: #F8FAFC;
+}
+
+/*# sourceMappingURL=exercises.css.map */

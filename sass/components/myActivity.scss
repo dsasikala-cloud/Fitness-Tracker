@@ -1,0 +1,514 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as *;
+
+.dashboard {
+    padding: 2rem;
+    min-height: 100vh;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, auto);
+        gap: 1.5rem;
+
+        grid-template-areas:
+            "activity activity goals heartbeat"
+            "activity activity goals sleep"
+            "food water health steps"
+            "food water meditation steps";
+    }
+}
+
+.chart-card {
+    background: $color-primary-dark;
+    color: $color-white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    @include m.flex-column(space-between, flex-start);
+    overflow: hidden;
+
+    h3 {
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+
+    &__body {
+        flex: 1;
+        position: relative;
+
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+}
+
+.chart-card--primary {
+    grid-area: activity;
+}
+
+.chart-card--secondary {
+    grid-area: goals;
+}
+
+.chart-card--heartbeat {
+    grid-area: heartbeat;
+}
+
+.chart-card--sleep {
+    grid-area: sleep;
+}
+
+.chart-card--food {
+    grid-area: food;
+}
+
+.chart-card--water {
+    grid-area: water;
+}
+
+.chart-card--health {
+    grid-area: health;
+}
+
+.chart-card--meditation {
+    grid-area: meditation;
+}
+
+.chart-card--steps {
+    grid-area: steps;
+}
+
+.chart-card--secondary {
+
+    max-width: 100%;
+
+    .chart-card__body {
+        max-width: 100%;
+        aspect-ratio: 1 / 1;
+        max-width: 200px;
+        margin: auto;
+    }
+
+    .donut-label {
+        position: absolute;
+        inset: 0;
+        @include m.flex-column(center, center);
+        font-weight: 600;
+        font-size: $font-medium;
+    }
+}
+
+.heartbeat {
+    height: 100%;
+    width: 100%;
+
+    &__info {
+        @include m.flex-row(space-between, center);
+    }
+
+    &__bpm {
+        font-size: 2rem;
+        font-weight: 600;
+
+        small {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-left: 4px;
+        }
+    }
+
+    &__status {
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        background: rgba(0, 255, 136, 0.15);
+    }
+
+    &__graph {
+        height: 60%;
+        margin-top: 10px;
+    }
+}
+
+.sleep {
+    width: 100%;
+
+    &__progress {
+        height: 10px;
+        background: $color-primary-light;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        animation: fillBar 1.5s ease forwards;
+    }
+
+    &__bar {
+        background: $grey-dark;
+        border-radius: 20px;
+    }
+
+    @keyframes fillBar {
+        from {
+            width: 0%;
+        }
+
+        to {
+            width: 75%;
+        }
+    }
+
+    &__desc {
+        font-size: $font-regular;
+        opacity: 0.8;
+        color: $grey-medium;
+    }
+}
+
+@media (max-width: $bp-large) {
+
+    .dashboard__grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            "activity activity goals"
+            "heartbeat food water"
+            "sleep food water"
+            "health steps steps"
+            "meditation steps steps";
+    }
+}
+
+@media (max-width: $bp-medium) {
+
+    .dashboard__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            "activity activity"
+            "goals heartbeat"
+            "goals sleep"
+            "food water"
+            "food water"
+            "health meditation"
+            "steps steps"
+            "steps steps";
+    }
+}
+
+@media (max-width: $bp-tablet) {
+
+    .dashboard__grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            "activity activity"
+            "goals heartbeat"
+            "goals sleep"
+            "food water"
+            "food water"
+            "health meditation"
+            "steps steps";
+    }
+}
+
+@media (max-width: $bp-mobile) {
+
+    .dashboard__grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "activity"
+            "goals"
+            "heartbeat"
+            "sleep"
+            "food"
+            "water"
+            "health"
+            "meditation"
+            "steps";
+    }
+
+    .chart-card--goals {
+        grid-row: auto;
+    }
+}
+
+
+.chart-card--food {
+    width: 100%;
+
+    .food {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .food__top {
+        @include m.flex-row(space-evenly, center);
+        width: 100%;
+    }
+
+    .food__stats {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    p {
+        color: $grey-medium;
+        font-size: 0.85rem;
+    }
+
+    .food__ring {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .food__circle {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        position: relative;
+        @include m.flex-row(center, center);
+
+        background: conic-gradient($color-primary 60%,
+                $grey-dark 0%);
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 115px;
+            height: 115px;
+            background: $color-primary-dark;
+            border-radius: 50%;
+        }
+
+        span {
+            position: relative;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+
+    .food__bottom {
+        display: flex;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .macro {
+        flex: 1;
+
+        p {
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+        }
+
+        &__bar {
+            height: 6px;
+            background: $grey-medium;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        &__fill {
+            height: 100%;
+            background: $color-primary;
+            border-radius: 10px;
+            animation: fillBar 1.5s ease forwards;
+        }
+
+        @keyframes fillBar {
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: 75%;
+            }
+        }
+    }
+}
+
+
+.water {
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 1.5rem;
+
+    &__body {
+        display: grid;
+        grid-template-columns: 2fr 0.5fr 0.5fr;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    &__info {
+        @include m.flex-column(center, flex-start);
+        gap: 1rem;
+    }
+
+    &__last,
+    &__tip {
+        display: flex;
+        gap: 0.5rem;
+        align-items: flex-start;
+        font-size: $font-regular;
+        color: $grey-medium;
+    }
+
+    &__controls {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    &__btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        background: $grey-light;
+        transition: 0.3s;
+
+        &:hover {
+            background: $color-primary-light;
+        }
+    }
+
+    &__progress {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__capsule {
+        width: 40px;
+        height: 180px;
+        border-radius: 40px;
+        background: $grey-light;
+        position: relative;
+        overflow: hidden;
+        @include m.flex-column(center, center);
+
+        span {
+            position: absolute;
+            color: $color-primary-dark;
+            font-weight: 600;
+            z-index: 2;
+            bottom: 10px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(to top,
+                    $color-primary-light,
+                    $color-primary );
+            transition: height 0.5s ease;
+        }
+    }
+}
+
+.chart-card--health {
+    grid-area: health;
+    @include m.flex-column(center, flex-start);
+    gap: 1.2rem;
+}
+
+.health {
+    width: 100%;
+    height: 100%;
+
+    &__score {
+        @include m.flex-row(space-between, center);
+    }
+
+    &__percent {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    &__status {
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        background: rgba(0, 255, 136, 0.15);
+    }
+
+    &__segments {
+        display: flex;
+        gap: 4px;
+        margin-top: 1rem;
+    }
+
+    &__segment {
+        flex: 1;
+        height: 10px;
+        border-radius: 4px;
+        background: $grey-dark;
+    }
+
+    &__segment--active {
+        background: $color-primary;
+    }
+}
+
+
+.meditation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+
+    &__time {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    &__progress {
+        width: 100%;
+        height: 10px;
+        background: $grey-dark;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    &__progress-bar {
+        height: 100%;
+        width: 0%;
+        background: $color-primary-light;
+        border-radius: 20px;
+        transition: width 0.5s ease;
+    }
+
+    &__description {
+        font-size: 0.8rem;
+        opacity: 0.7;
+        line-height: 1.4;
+    }
+}
+
+.chart-card--steps {
+
+    @include m.flex-column(space-between, flex-start);
+
+    .chart-card__body {
+        width: 100%;
+        height: 100%;
+        min-height: 220px;
+        position: relative;
+    }
+}
+
+.dashboard {
+    background: $grey-medium;
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <section class="dashboard">
+
+        <div class="dashboard__grid">
+
+            <div class="chart-card chart-card--primary">
+                <div class="chart-card__header">
+                    <h3>Weekly Activity</h3>
+                </div>
+                <div class="chart-card__body">
+                    <canvas id="activityBarChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card chart-card--secondary">
+                <div class="chart-card__header">
+                    <h3>Workout Goals</h3>
+                </div>
+                <div class="chart-card__body chart-card__body--centered">
+                    <canvas id="goalDonutChart"></canvas>
+                    <div class="donut-label">70%</div>
+                </div>
+
+            </div>
+
+            <div class="chart-card chart-card--small">
+                <div class="chart-card__header">
+                    <h3>Workout Split</h3>
+                </div>
+
+                <div class="heartbeat">
+
+                    <div class="heartbeat__info">
+                        <div class="heartbeat__bpm">
+                            <span id="bpmValue">78</span>
+                            <small>BPM</small>
+                        </div>
+
+                        <div class="heartbeat__status" id="bpmStatus">
+                            Normal
+                        </div>
+                    </div>
+
+                    <div class="heartbeat__graph">
+                        <canvas id="heartbeatChart"></canvas>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="chart-card chart-card--sleep">
+                <h3>Sleep Schedule</h3>
+                <div class="sleep">
+                    <div class="sleep__bar">
+                        <div class="sleep__progress" id="sleepProgress"></div>
+                    </div>
+                    <div class="sleep__desc">
+                        You slept <strong>6h 30m</strong> out of <strong>8h</strong> recommended.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="chart-card chart-card--food">
+
+                <div class="food__header">
+                    <h3>Food Measurement</h3>
+                </div>
+
+                <div class="food">
+
+                    <div class="food__top">
+
+                        <div class="food__stats">
+                            <div class="food__item">
+                                <p>Eaten</p>
+                                <strong>1100 kcal</strong>
+                            </div>
+
+                            <div class="food__item">
+                                <p>Burned</p>
+                                <strong>100 kcal</strong>
+                            </div>
+                        </div>
+
+                        <div class="food__ring">
+                            <div class="food__circle">
+                                <span>1000<br><small>kcal left</small></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="food__bottom">
+
+                        <div class="macro">
+                            <p>Carbs</p>
+                            <div class="macro__bar">
+                                <div class="macro__fill" style="width:60%"></div>
+                            </div>
+                            <p>12g left</p>
+                        </div>
+
+                        <div class="macro">
+                            <p>Protein</p>
+                            <div class="macro__bar">
+                                <div class="macro__fill" style="width:45%"></div>
+                            </div>
+                            <p>52g left</p>
+                        </div>
+
+                        <div class="macro">
+                            <p>Body Fat</p>
+                            <div class="macro__bar">
+                                <div class="macro__fill" style="width:30%"></div>
+                            </div>
+                            <p>Around 10%</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="chart-card chart-card--water">
+                <div class="water">
+
+                    <div class="water__header">
+                        <h3>Water Measurement</h3>
+                        <p><strong>1000ml </strong>of daily goal 3.5L</p>
+                    </div>
+
+                    <div class="water__body">
+
+                        <div class="water__info">
+                            <div class="water__last">
+                                <span>⏱</span>
+                                <p>Last drink 8:26 am</p>
+                            </div>
+
+                            <div class="water__tip">
+                                <span>💧</span>
+                                <p>Drinking water helps maintain the balance of body fluids</p>
+                            </div>
+                        </div>
+
+                        <div class="water__controls">
+                            <button class="water__btn" id="addWater">+</button>
+                            <button class="water__btn" id="removeWater">-</button>
+                        </div>
+
+                        <div class="water__progress">
+
+                            <div class="water__capsule">
+                                <span id="waterPercent">0%</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="chart-card chart-card--health">
+
+                <h3>Health Score</h3>
+
+                <div class="health">
+                    <div class="health__score">
+                        <span class="health__percent" id="healthPercent"></span>
+                        <span class="health__status" id="healthStatus"></span>
+                    </div>
+
+                    <div class="health__segments">
+                        <div class="health__segment"></div>
+                        <div class="health__segment"></div>
+                        <div class="health__segment"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="chart-card chart-card--meditation meditation">
+
+                <h3 class="meditation__title">Focus & Meditation</h3>
+
+                <div class="meditation__time">
+                    <span id="meditationTimeLeft"></span>
+                </div>
+
+                <div class="meditation__progress">
+                    <div class="meditation__progress-bar" id="meditationProgress"></div>
+                </div>
+
+                <p class="meditation__description">
+                    Stay calm and focus on your breathing to improve concentration.
+                </p>
+
+            </div>
+
+            <div class="chart-card chart-card--steps">
+                <div class="chart-card__header">
+                    <h3>Daily Steps Progress</h3>
+                </div>
+
+                <div class="chart-card__body">
+                    <canvas id="stepsLineChart"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <a href="index.html" class="floating-home">
+        <i class="fa-solid fa-house"></i>
+    </a>
+
+
+    <script src="js/components/myActivity.js"></script>
+</body>
+
+</html>

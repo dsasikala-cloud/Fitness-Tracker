@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- <meta http-equiv="refresh" content="0; url=contact.html"> -->
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+        <div class="header-container">
+
+            <div class="header-left">
+                <!-- <img src="images/logo.png" alt="Logo"> -->
+                <i class="fa-solid fa-dumbbell"></i>
+                <span class="brand-name">FitTrack</span>
+            </div>
+
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <nav class="header-right">
+
+                <div class="close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+                <ul>
+                    <li><a href="./myActivity.html">My Activity</a></li>
+                    <li><a href="./exercises.html">Exercises</a></li>
+                    <li><a href="#">Plan</a></li>
+                    <li><a href="#" id="openFeedback">Feedback</a></li>
+                    <li><a href="#">ContactUs</a></li>
+                    <li class="profile-icon"><a href="#" id="openSignin"><i class="fa-regular fa-circle-user"></i></a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="title">Ready to Transform Your Fitness?</h1>
+            <p class="subtitle">
+                Start your journey with guided workouts
+                designed to match your goals and pace.
+            </p>
+            <button class="btn">Get Started
+
+            </button>
+        </div>
+    </section>
+
+    <section class="carousel">
+        <div class="carousel__slides">
+
+            <div class="carousel__slide active">
+                <p>"Push yourself because no one else is going to do it for you."</p>
+                <h3 class="carousel__author">-- John Rhon</h3>
+            </div>
+
+            <div class="carousel__slide">
+                <p>"Success starts with self-discipline."</p>
+                <h3 class="carousel__author">-- Dwayne Johnson</h3>
+            </div>
+
+            <div class="carousel__slide">
+                <p>"The body achieves what the mind believes."</p>
+                <h3 class="carousel__author">-- Napoleon Hill</h3>
+            </div>
+
+        </div>
+
+        <div class="carousel__dots">
+            <span class="carousel__dot active"></span>
+            <span class="carousel__dot"></span>
+            <span class="carousel__dot"></span>
+        </div>
+    </section>
+
+    <section class="goals-gallery">
+
+        <h2 class="head-title">
+            Healthy Goals in 3 Steps
+        </h2>
+
+        <div class="goals-gallery__images">
+
+            <div class="goals-gallery__image">
+                <img src="assets/images/step1.webp" alt="Step 1">
+                <h3>01. Plan Smart</h3>
+            </div>
+
+            <div class="goals-gallery__image">
+                <img src="assets/images/step2.webp" alt="Step 2">
+                <h3>02. Train Consistently</h3>
+            </div>
+
+            <div class="goals-gallery__image">
+                <img src="assets/images/step3.webp" alt="Step 3">
+                <h3>03. Track Progress</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="exercise">
+
+        <div class="exercise__content">
+            <h1 class="exercise__title">
+                Train Smarter. <br>
+                Get Stronger.
+            </h1>
+
+            <p class="exercise__subtitle">
+                Discover workout plans tailored to your goals <br>
+                — from beginner to beast mode.
+            </p>
+
+            <button class="btn" onclick="window.location.href='exercises.html'">
+                Explore Workouts
+            </button>
+        </div>
+
+    </section>
+
+
+    <section class="features">
+        <div class="container">
+
+            <div class="features__header">
+                <p class="subtitle">Features</p>
+                <h2 class="head-title">Everything You Need to Stay Fit</h2>
+            </div>
+
+            <div class="features__grid">
+
+                <article class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3 class="feature-card__title">Workout Logging</h3>
+                    <p class="feature-card__text">
+                        Record exercise type, duration, intensity, and session metrics easily.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-card__title">Progress Tracking</h3>
+                    <p class="feature-card__text">
+                        Visualize trends and performance with charts and insights.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="feature-card__title">Goal Setting</h3>
+                    <p class="feature-card__text">
+                        Set weight, strength, and consistency goals with tracking support.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3 class="feature-card__title">Nutrition Tracking</h3>
+                    <p class="feature-card__text">
+                        Track meals, calories, and macronutrients easily.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="stats">
+        <div class="container">
+
+            <div class="stats__header">
+                <h2 class="stats__title">Trusted by Fitness Enthusiasts</h2>
+            </div>
+
+            <div class="stats__grid">
+
+                <div class="stat-card">
+                    <h3 class="stat-number">10,000+</h3>
+                    <p class="stat-label">Workouts Logged</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="stat-number">5,000+</h3>
+                    <p class="stat-label">Active Users</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="stat-number">95%</h3>
+                    <p class="stat-label">User Satisfaction</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="stat-number">1M+</h3>
+                    <p class="stat-label">Calories Tracked</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="testimonials">
+        <div class="container">
+
+            <h2 class="head-title">User Testimonials</h2>
+
+            <div class="testimonials__grid">
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “This app completely changed how I track my workouts.
+                        The progress charts keep me motivated every single day.”
+                    </p>
+                    <div class="testimonial-user">
+                        <img src="../assets/images/user2.webp" alt="User 1">
+                        <div>
+                            <h4>Priya Sharma</h4>
+                            <span>Fitness Enthusiast</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “The custom workout plans are amazing! I've seen
+                        real improvement in just a few weeks.”
+                    </p>
+                    <div class="testimonial-user">
+                        <img src="../assets/images/user1.webp" alt="User 2">
+                        <div>
+                            <h4>Rahul Verma</h4>
+                            <span>Gym Member</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        “Tracking my calories and workouts in one place
+                        makes everything so simple and efficient.”
+                    </p>
+                    <div class="testimonial-user">
+                        <img src="../assets/images/user3.webp" alt="User 3">
+                        <div>
+                            <h4>Ananya Patel</h4>
+                            <span>Yoga Trainer</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer__grid">
+
+                <div class="footer__brand">
+                    <i class="fa-solid fa-dumbbell footer__logo"> &nbsp </i>
+                    <span class="brand-name footer__logo">FitTrack</span>
+                    <p class="footer__subtitle">
+                        Helping you track workouts, monitor progress,
+                        and stay consistent with your fitness goals.
+                    </p>
+                </div>
+
+                <div class="footer__links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <!-- <li><a href="#" id="openFeedback">Feedback</a></li> -->
+                        <li><a href="#">Programs</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__links">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#">Workout Tracking</a></li>
+                        <li><a href="#">Progress Charts</a></li>
+                        <li><a href="#">Nutrition Plans</a></li>
+                        <li><a href="#">Goal Setting</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__contact">
+                    <h4>Contact</h4>
+                    <p>Email: support@fittrack.com</p>
+                    <p>Phone: +91 98765 43210</p>
+                    <div class="footer__social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer__bottom">
+                © 2026 FitTrack. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+
+    <a href="index.html" class="floating-home">
+        <i class="fa-solid fa-house"></i>
+    </a>
+
+    <script src="./js/components/home.js"></script>
+</body>
+
+</html>
